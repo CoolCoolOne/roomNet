@@ -11,7 +11,7 @@ if (!$_SESSION['user']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>river_page</title>
+    <title>roomGL</title>
     <link rel="stylesheet" href="./gl_style.css">
 </head>
 
@@ -30,7 +30,7 @@ if (!$_SESSION['user']) {
     ?>
 
     <div class="background" id="backpic">
-        <h1 class="header">Моя галерея</h1>
+        <h1 class="header">Общая галерея</h1>
         <h2 class="subheader">
             <a href="./pic_adder.php">+ Добавить картинку</a>
         </h2>
@@ -42,7 +42,10 @@ if (!$_SESSION['user']) {
                 <div class="riverpic">
                     <img src="./<?= $pic['img'] ?>" alt="river1">
                     <div class="time">
-                        Добавлено: <?= $pic['date'] ?>
+                        дата: <?= $pic['date'] ?>
+                    </div>
+                    <div class="author">
+                        автор: <?= $pic['author'] ?>
                     </div>
                 </div>
             <?php } ?>

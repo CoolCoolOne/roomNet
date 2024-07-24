@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 23 2024 г., 19:59
+-- Время создания: Июл 24 2024 г., 13:21
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -30,18 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `pictures` (
   `id` int(11) NOT NULL,
   `img` varchar(255) DEFAULT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp()
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  `author` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `pictures`
 --
 
-INSERT INTO `pictures` (`id`, `img`, `date`) VALUES
-(1, 'photos/fire.JPG', '2024-07-23'),
-(2, 'photos/froze.JPG', '2024-07-23'),
-(3, 'photos/home.JPG', '2024-07-21'),
-(4, 'photos/tree.JPG', '2024-07-31');
+INSERT INTO `pictures` (`id`, `img`, `date`, `author`) VALUES
+(1, 'photos/fire.JPG', '2024-07-23', 'admin'),
+(2, 'photos/froze.JPG', '2024-07-23', 'admin'),
+(4, 'photos/tree.JPG', '2024-07-31', 'admin'),
+(9, 'gl_uploads/1721819916_X9gLsj5Nek0.jpg', '2024-07-24', 'admin');
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

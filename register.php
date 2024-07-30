@@ -24,8 +24,8 @@ if (isset($_SESSION['user'])){
         <label for="">Логин</label>
         <input type="text" name="login" placeholder="Введите логин">
 
-        <label for="">Полное имя</label>
-        <input type="text" name="name" placeholder="Введите имя">
+        <!-- <label for="">Полное имя</label>
+        <input type="text" name="name" placeholder="Введите имя"> -->
 
         <label for="">Почта @</label>
         <input type="text" name="addr" placeholder="уКажите почту">
@@ -38,6 +38,9 @@ if (isset($_SESSION['user'])){
 
         <label for="">Повторите пароль</label>
         <input type="password" name="pass_confirm" placeholder="Введите пароль">
+
+        <label for="">ПРИГЛАСИТЕЛЬНЫЙ КОД</label>
+        <input type="password" name="code" placeholder="Код">
 
         <button type="submit" >Регистрация</button>
 

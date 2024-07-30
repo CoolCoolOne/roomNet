@@ -35,11 +35,11 @@ if (!$_SESSION['user']) {
 
 
             <?php
-            echo 'Добро пожаловать, ' . $_SESSION['user']['full_name'];
+            echo 'Добро пожаловать, ' . $_SESSION['user']['login'];
 
             echo ' <img class="picGif" src="./imgs/computer.gif" alt="animeComputer"> ';
             echo '<div class="email">';
-            echo 'Ваша почта: ' . $_SESSION['user']['email'];
+            echo '!не храните тут личное или важное, <br> не гарантирую безопасность паролей!';
             echo '</div>';
             ?>
 
@@ -51,14 +51,14 @@ if (!$_SESSION['user']) {
 
     </div>
     <div class="menu_container">
-        <div class="blog">
+        <!-- <div class="blog">
             <a href="./blog/blog.php">Раздел новостей</a> (в разработке)
-        </div>
+        </div> -->
         <div class="hosting">
         <a href="./gl/gl.php">Галерея картинок</a>
         </div>
         <div class="hosting">
-            Другие пользователи (в разработке)
+        <a href="./uzrs_table/uzrs_table.php">Другие пользователи (новое!)</a>
         </div>
     </div>
 

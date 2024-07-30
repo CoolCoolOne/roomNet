@@ -4,7 +4,7 @@ function Message($type)
     switch ($type) {
         case 0:
             $_SESSION['authSuc'] = False;
-            $_SESSION['msg'] = 'пароли не совпадают!';
+            $_SESSION['msg'] = 'пароли не совпадают и см. КОД';
             header('Location: ../register.php');
             break;
         case 1:
@@ -22,6 +22,11 @@ function Message($type)
             $_SESSION['authSuc'] = False;
             $_SESSION['msg'] = 'Не верный логин или пароль!';
             header('Location: ../index.php');
+            break;
+        case 4:
+            $_SESSION['authSuc'] = False;
+            $_SESSION['msg'] = '[ОШИБКА] фото не выбрано!';
+            header('Location: ../gl/pic_adder.php');
             break;
         default:
             $_SESSION['authSuc'] = False;

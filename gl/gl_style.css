@@ -33,10 +33,17 @@ html{
   .header{
     color: rgb(255, 233, 209);
     margin: 0;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     text-align: center;
     font-size: 50px;
-    background-color: rgb(35, 42, 52,0.95);
+    display: flex;
+    /* width: 100%; */
+    /* height: 100vh; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    /* background-color: rgb(35, 42, 52,0.95); */
   }
 
   .subheader{
@@ -67,9 +74,9 @@ html{
 .riverpic{
     display: flex;
     justify-content: center;
-    width: 200px;
+    width: 150px;
    /* width: 40vh; */
-    height: 200px;
+    height: 150px;
     overflow: hidden;
     /* background-size: cover; */
     border: 4px solid rgb(255, 233, 209);
@@ -123,7 +130,8 @@ html{
     transform: translate(-50%,-50%);
     border: 3px solid rgb(255, 233, 209);
     border-radius: 5%;
-    width: 70%;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .pop_up span{
@@ -141,8 +149,16 @@ html{
     cursor: pointer;
 }
 
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    background-color: rgb(35, 42, 52,0.95);
+}
+
 .avatar{
-    position: absolute;
+    /* position: absolute; */
+    /* display: inline; */
     margin: 20px;
     width: 150px;
     padding: 10px;

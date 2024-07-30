@@ -33,11 +33,25 @@ html{
   .header{
     color: rgb(255, 233, 209);
     margin: 0;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     text-align: center;
     font-size: 50px;
-    background-color: rgb(35, 42, 52,0.95);
+    display: flex;
+    /* width: 100%; */
+    /* height: 100vh; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    /* background-color: rgb(35, 42, 52,0.95); */
   }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    background-color: rgb(35, 42, 52,0.95);
+}
 
   .subheader{
     color: rgb(255, 233, 209);
@@ -100,7 +114,8 @@ html{
 
 
 .avatar{
-    position: absolute;
+        /* position: absolute; */
+    /* display: inline; */
     margin: 20px;
     width: 150px;
     padding: 10px;

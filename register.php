@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
     header('Location: ./room.php');
 }
 // if(!empty($_SESSION['msg'])) 
@@ -14,8 +14,9 @@ if (isset($_SESSION['user'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>room_reg</title>
+    <title>RoomNeto.ru</title>
     <link rel="stylesheet" href="./styleRoom.css">
+    <link rel="icon" href="logo.ico"><!-- 32×32 -->
 </head>
 
 <body>
@@ -42,7 +43,12 @@ if (isset($_SESSION['user'])){
         <label for="">ПРИГЛАСИТЕЛЬНЫЙ КОД</label>
         <input type="password" name="code" placeholder="Код">
 
-        <button type="submit" >Регистрация</button>
+        <label> Примите <a href="./userLaws.html">условия</a>
+            <input class="checkbox" type="checkbox" name="isAccept">
+        </label>
+
+
+        <button type="submit">Регистрация</button>
 
         <div class="reg">
             Уже есть аккаунт?

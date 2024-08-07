@@ -16,6 +16,7 @@ error_reporting(E_ALL);
     <meta name="viewport" content="width=500">
     <title>roomUzrs</title>
     <link rel="stylesheet" href="./table_style.css">
+    <link rel="icon" href="../logo.ico"><!-- 32×32 -->
 </head>
 
 <body>

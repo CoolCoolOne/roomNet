@@ -17,6 +17,7 @@ html{
     background-repeat: repeat;
     /* background-attachment: scroll; */
     background-attachment: fixed; 
+    min-height: 100vh;
   }
 
   .container{

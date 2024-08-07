@@ -9,24 +9,28 @@ $addr = $_POST['addr'];
 $pass = $_POST['pass'];
 $pass_confirm = $_POST['pass_confirm'];
 $code = $_POST['code'];
+$isAccept = $_POST['isAccept'];
 
-if (($pass === $pass_confirm) and ($code === 'NetFriend')){
-    $pass = md5($pass);
-    // $_FILES['avatar']['name']
-    $loadPath = 'uploads/' . time() . '_' . $_FILES['image']['name'];
-    $upToDir = '../';
-    $successLoad = move_uploaded_file($_FILES['image']['tmp_name'],  $upToDir . $loadPath);
-    if (!$successLoad) {
-        Message(1);
-    } else {
-        mysqli_query($connect, "INSERT INTO 
+if ($isAccept) {
+    if (($pass === $pass_confirm) and ($code === 'NetFriend')) {
+        $pass = md5($pass);
+        // $_FILES['avatar']['name']
+        $loadPath = 'uploads/' . time() . '_' . $_FILES['image']['name'];
+        $upToDir = '../';
+        $successLoad = move_uploaded_file($_FILES['image']['tmp_name'],  $upToDir . $loadPath);
+        if (!$successLoad) {
+            Message(1);
+        } else {
+            mysqli_query($connect, "INSERT INTO 
         `users` (`id`, `login`, `email`, `password`, `avatar`) 
         VALUES (NULL, '$login', '$addr', '$pass', '$loadPath')");
-        Message(2);
-    };
+            Message(2);
+        };
+    } else {
+        Message(0);
+    }
 } else {
-    Message(0);
+    Message(5);
 }
-
 
 // $connect

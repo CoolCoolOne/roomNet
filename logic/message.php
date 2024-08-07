@@ -28,6 +28,16 @@ function Message($type)
             $_SESSION['msg'] = '[ОШИБКА] фото не выбрано!';
             header('Location: ../gl/pic_adder.php');
             break;
+        case 5:
+            $_SESSION['authSuc'] = False;
+            $_SESSION['msg'] = 'Примите УСЛОВИЯ чтобы зарегестироваться';
+            header('Location: ../register.php');
+            break;
+        case 6:
+                $_SESSION['authSuc'] = False;
+                $_SESSION['msg'] = '[ошибка] Введите текст и тему.';
+                header('Location: ../blog/blog_manage.php');
+                break;
         default:
             $_SESSION['authSuc'] = False;
             $_SESSION['msg'] = 'неизвестная ошибка!';

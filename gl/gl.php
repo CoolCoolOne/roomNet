@@ -15,6 +15,7 @@ error_reporting(E_ALL);
     <meta name="viewport" content="width=500">
     <title>roomGL</title>
     <link rel="stylesheet" href="./gl_style.css">
+    <link rel="icon" href="../logo.ico"><!-- 32×32 -->
 </head>
 
 <body>
@@ -39,7 +40,9 @@ error_reporting(E_ALL);
             <h1 class="header">Общая галерея</h1>
         </div>
         <h2 class="subheader">
-            <a href="./pic_adder.php">+ Добавить картинку (видос пока не добавляется)</a>
+            <a href="./pic_adder.php">+ Добавить картинку</a>
+             |или|
+            <a href="./pic_adder.php">- Удалить картинку</a>
         </h2>
 
         <div class="rivers-container">

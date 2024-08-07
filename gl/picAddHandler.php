@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!$_SESSION['user']) {
-    header('Location: ./index.php');
+    header('Location: ../index.php');
 }
 require_once '../logic/connectPDO.php';
 require_once '../logic/message.php';
@@ -30,6 +30,7 @@ if (!$successLoad) {
     $o = json_decode(file_get_contents(WEBSERVICE . $s));
 
     if (isset($o->error)) {
+        echo '<a href="./gl.php">ГАЛЕРЕЯ</a>';
         die('Error with resizing api..');
     }
     // echo $o->dest; //URL of the optimized picture
@@ -40,7 +41,7 @@ if (!$successLoad) {
     $savePath = '/home/a/aleksey199/RoomNeto_ru/public_html/gl/' . $loadPath;;
     if (!copy($newfile, $savePath)) {
         echo "Не удалось скопировать $file...\n";
-        echo $_SERVER["DOCUMENT_ROOT"];
+        // echo $_SERVER["DOCUMENT_ROOT"];
         //     echo '<br>';
         // echo '<hr>';
         // echo 'ИСПРАВЛЯЮ, (на память мне- НАДО ОТПРАВЛЯТЬ НА ФОРМУ а не по http грузить)';

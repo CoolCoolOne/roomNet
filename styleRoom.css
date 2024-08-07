@@ -18,6 +18,8 @@ body {
 
 
 form {
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -82,4 +84,18 @@ a {
     font-weight: 700;
     color: rgb(2, 154, 2);
     background-color: rgb(48, 48, 48,0.9);
+}
+
+.checkbox{
+    /* display: inline; */
+    margin-top: 0;
+    margin-bottom: 0;
+    transform:scale(1.5);
+    /* margin-left: ; */
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+button{
+    margin-top: 10px;
 }

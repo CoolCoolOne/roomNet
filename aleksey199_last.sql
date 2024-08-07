@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Июл 30 2024 г., 14:29
+-- Время создания: Авг 05 2024 г., 19:13
 -- Версия сервера: 5.7.27-30-log
 -- Версия PHP: 8.0.30
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- База данных: `aleksey199`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `author_id` int(11) DEFAULT NULL,
+  `text` text,
+  `color` int(4) NOT NULL DEFAULT '0',
+  `theme` varchar(100) NOT NULL DEFAULT 'Без темы'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `news`
+--
+
+INSERT INTO `news` (`id`, `date`, `author_id`, `text`, `color`, `theme`) VALUES
+(2, '2024-08-05 14:26:39', 9, 'Привет! Это первая запись! Я люблю пофантазировать. И вот подумал, а что если сделать сайт, на котором я не только отработаю свои новые навыки web разработчика. \r\n<br><br>\r\nТакой сайт, который принесёт новое и приятное для моих друзей и близких. И вот оно! Что-то вроде закрытой соц сети, где можно комфортно поделиться и почитать. Где нет каналов, которые безостановочно присылают уведомления и провоцируют оценочное мышление. Конечно это вряд ли замена существующих средств...\r\n<br><br>\r\nНо я уже увидел, что это может быть интересно, на примере той веселухи на страничке с картинками!\r\n<br><br>\r\nСпасибо! за ваше участие в этом развлечении!\r\n<br><br>\r\nА вот ещё забыл, расскажу почему зазывается RoomNeto. Сначала это была просто страничка регистрации и пустым личным кабинетом. Пустой room! Потом я добавил при покупке домена net (вроде как сеть). Но и так домен был занят. Поэтому получилось что то немного неуклюже звучащее румнето. Вполне моём духе автора МГОО. Теперь остаётся принять и полюбить эту неуклюжесть!', 1, 'ИДЕЯ САЙТА ROOMNETO.RU'),
+(3, '2024-08-05 15:15:39', 14, 'А что будет, если использовать кавычки?) А можно я попробую хакнуть тебе базу данных? Ронять базу не буду, конечно, но интересно, пройдёт ли какая-нибудь sql инъекция на изменение имени другого пользователя) ', 2, 'ВЗЛОМ ЖЕПЫ'),
+(4, '2024-08-05 15:19:45', 9, 'Короче это Лев написал снизу. Но то ли он взломал, то ли само так глючно, что везде пишет автор админ. Мех...', 0, 'БАГИ');
 
 -- --------------------------------------------------------
 
@@ -56,8 +80,11 @@ INSERT INTO `pictures` (`id`, `img`, `date`, `author`) VALUES
 (22, 'gl_uploads/1722069903_125.jpg', '2024-07-27 08:45:03', 'NadiaNevraera'),
 (23, 'gl_uploads/1722069937_20240715_123944.jpg', '2024-07-27 08:45:37', 'NadiaNevraera'),
 (40, 'gl_uploads/1722147917_photo_2024-07-28_09-24-34.jpg', '2024-07-28 06:25:17', 'rfnt'),
-(45, 'gl_uploads/1722163088_test.jpeg', '2024-07-28 10:38:08', 'admin'),
-(50, 'gl_uploads/1722165785_photo_2024-07-28_11-13-43.jpg', '2024-07-28 11:23:05', 'admin');
+(50, 'gl_uploads/1722165785_photo_2024-07-28_11-13-43.jpg', '2024-07-28 11:23:05', 'admin'),
+(51, 'gl_uploads/1722341631_photo_2024-07-30_13-17-53.jpg', '2024-07-30 12:13:51', 'admin'),
+(53, 'gl_uploads/1722364219_Screenshot_20200408-215343_Gallery.jpg', '2024-07-30 18:30:19', 'Android '),
+(55, 'gl_uploads/1722509090_logo.jpg', '2024-08-01 10:44:50', 'admin'),
+(58, 'gl_uploads/1722870665_Screenshot_2024-08-05-18-09-44-175_org.telegram.messenger.jpg', '2024-08-05 15:11:05', 'admin');
 
 -- --------------------------------------------------------
 
@@ -87,11 +114,20 @@ INSERT INTO `users` (`id`, `login`, `full_name`, `email`, `password`, `avatar`) 
 (15, 'Kgb', NULL, 'blinov.kirill@yandex.ru', '9aefeea48e612febb851d13d3f030efa', 'uploads/1722013381_A11F6746-71A1-4268-A565-4D730BC37846-30244-000004DA9443FD2A.jpeg'),
 (16, 'Sofa', NULL, 'cofya.s@mail.ru', '1ee084e2697bd3b98e5ed82b3eaf1bb4', 'uploads/1722014211_IMG_2835.jpeg'),
 (17, 'NadiaNevraera', NULL, 'xo.frerard@gmail.com', '474ecba87d175da5ffeb5b31a562b160', 'uploads/1722069535_20240627_204237.jpg'),
-(18, 'rfnt', NULL, 'kc@nntu.ru', 'a9a811359788f810d3ed103a583f921f', 'uploads/1722147410_photo_2024-07-28_09-09-38.jpg');
+(18, 'rfnt', NULL, 'kc@nntu.ru', 'a9a811359788f810d3ed103a583f921f', 'uploads/1722147410_photo_2024-07-28_09-09-38.jpg'),
+(19, 'Ялу', NULL, 'koxana5ul@yandex.ru ', 'cb3f69b7768644e30f00bd169c3b8fbe', 'uploads/1722535026_IMG_20240515_154815.jpg'),
+(20, 'ЧелТест', NULL, 'No', '45c48cce2e2d7fbdea1afc51c7c6ad26', 'uploads/1722871337_Screenshot_2024-08-05-18-09-44-175_org.telegram.messenger.jpg');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `author_id` (`author_id`);
 
 --
 -- Индексы таблицы `pictures`
@@ -110,16 +146,32 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT для таблицы `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `news`
+--
+ALTER TABLE `news`
+  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

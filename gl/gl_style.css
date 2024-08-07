@@ -17,6 +17,7 @@ html{
     background-image: url(../imgs/room_bg.jpg);
     background-size: 45%;
     /* height: 100vh; */
+    min-height: 100vh;
   }
 
   .container{

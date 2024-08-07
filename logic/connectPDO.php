@@ -3,6 +3,12 @@ $host = 'localhost';
 $db   = 'aleksey199';
 $user = 'aleksey199';
 $pass = 'G621h89GGodkk';
+
+// $db   = 'room';
+// $user = 'root';
+// $pass = '123';
+
+
 // $port = "3306";
 $charset = 'utf8mb4';
 $options = [

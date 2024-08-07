@@ -13,8 +13,9 @@ if (!$_SESSION['user']) {
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=700">
-    <title>room_auth</title>
+    <title>RoomNeto.ru</title>
     <link rel="stylesheet" href="./MyRoom.css">
+  <link rel="icon" href="logo.ico"><!-- 32×32 -->
 </head>
 
 
@@ -40,7 +41,7 @@ if (!$_SESSION['user']) {
 
             echo ' <img class="picGif" src="./imgs/computer.gif" alt="animeComputer"> ';
             echo '<div class="email">';
-            echo '!не храните тут личное или важное, <br> не гарантирую безопасность паролей!';
+            echo 'Привет! Алексей приветствует тебя здесь, <br> и благодарит за посещение! <br> Сейчас в разработке раздел БЛОГ';
             echo '</div>';
             ?>
 
@@ -52,15 +53,15 @@ if (!$_SESSION['user']) {
 
     </div>
     <div class="menu_container">
-        <!-- <div class="blog">
-            <a href="./blog/blog.php">Раздел новостей</a> (в разработке)
-        </div> -->
-        <div class="hosting">
-        <a href="./gl/gl.php">Галерея картинок</a>
-        </div>
-        <div class="hosting">
-        <a href="./uzrs_table/uzrs_table.php">Другие пользователи (новое!)</a>
-        </div>
+        <a href="./gl/gl.php" style="display: block;">
+            <div class="hosting">Галерея картинок</div>
+        </a>
+        <a href="./uzrs_table/uzrs_table.php" style="display: block;">
+            <div class="hosting">Другие пользователи</div>
+        </a>
+        <a href="./blog/blog.php" style="display: block;">
+            <div class="hosting">Блог<!-- <a href="./uzrs_table/uzrs_table.php">Блог</a> --></div>
+        </a>
     </div>
 
 

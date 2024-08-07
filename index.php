@@ -12,8 +12,9 @@ if (isset($_SESSION['user'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>room_auth</title>
+    <title>RoomNeto.ru</title>
     <link rel="stylesheet" href="./styleRoom.css">
+    <link rel="icon" href="logo.ico"><!-- 32×32 -->
 </head>
 
 <body>

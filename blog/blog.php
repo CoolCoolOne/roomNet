@@ -34,6 +34,8 @@ error_reporting(E_ALL);
             <a href="./blog_manage.php">+ Добавить новость</a>
             |или|
             <a href="./blog_manage.php">- Удалить новость</a>
+            <hr>
+            <div id="nextPG">Страница</div>
         </h2>
 
         <?php
@@ -93,3 +95,5 @@ error_reporting(E_ALL);
 </body>
 
 </html>
+
+<script src="./bLogic/reqPage.js" ></script>

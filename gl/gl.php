@@ -4,6 +4,7 @@ if (!$_SESSION['user']) {
     header('Location: ./index.php');
 }
 require_once '../logic/connectPDO.php';
+require_once '../logic/pagination.php';
 error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=500">
-    <title>roomGL</title>
+    <title>RoomNeto.ru</title>
     <link rel="stylesheet" href="./gl_style.css">
     <link rel="icon" href="../logo.ico"><!-- 32×32 -->
 </head>
@@ -21,13 +22,39 @@ error_reporting(E_ALL);
 <body>
 
     <?php
-    // $pdo = new PDO("mysql:host=localhost;dbname=aleksey199;", "aleksey199", "G621h89GGodkk");
-    // $pics = $pdo->query("SELECT * FROM pictures ORDER BY date DESC")->fetchAll(PDO::FETCH_ASSOC);
-    // print_r($pics);
 
-    $pics = $pdo->query("SELECT * FROM pictures ORDER BY date DESC ")->fetchAll();
+    // $pics = $pdo->query("SELECT * FROM pictures ORDER BY date DESC ")->fetchAll();
     // SELECT DATE_FORMAT('2007-10-04 22:23:00', '%H:%i:%s');
+    $reqBody = "SELECT COUNT(*) FROM pictures";
+    $content = $pdo->query($reqBody)->fetchAll();
+    $AllpagesCount = ceil(($content[0]['COUNT(*)']) / 8);
+    // print_r($AllpagesCount);
+
+
+    if (isset($_GET['page'])) {
+        $num = $_GET['num'];
+
+        if ($num < 1) {
+            $num = 1;
+        } else if ($num > $AllpagesCount) {
+            $num = $AllpagesCount;
+        }
+
+
+        if ($_GET['page'] == 'next') {
+            $pics = pagination($pdo, 8, $num);
+        } else if ($_GET['page'] == 'pre') {
+            $pics = pagination($pdo, 8, $num);
+        } else {
+            $pics = pagination($pdo, 8, 1);
+            $num = 1;
+        }
+    } else {
+        $pics = pagination($pdo, 8, 1);
+        $num = 1;
+    }
     ?>
+
 
     <div class="background" id="backpic">
         <div class="row">
@@ -41,8 +68,24 @@ error_reporting(E_ALL);
         </div>
         <h2 class="subheader">
             <a href="./pic_adder.php">+ Добавить картинку</a>
-             |или|
+            |или|
             <a href="./pic_adder.php">- Удалить картинку</a>
+
+            <hr>
+            <?php
+            $nummnus = $num - 1;
+            echo '<a href="./gl.php?page=pre&num=' . $nummnus . '"> <- Предыдущая стр </a>';
+            echo '---';
+            $numplus = $num + 1;
+            echo '<a href="./gl.php?page=next&num=' . $numplus . '"> Следующая стр -> </a>';
+            ?>
+            <hr>
+            <?php
+            echo 'Вы на странице: ' . $num;
+            echo '<br>';
+            echo 'Всего страниц: ' . $AllpagesCount;
+            ?>
+
         </h2>
 
         <div class="rivers-container">

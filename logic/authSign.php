@@ -14,7 +14,7 @@
         $user = mysqli_fetch_assoc($check_usr);
         $_SESSION['user'] = [
             "id" => $user['id'],
-            "full_name" => $user['full_name'],
+            "is_invited" => $user['is_invited'],
             "avatar" => $user['avatar'],
             "email" => $user['email'],
             "login" => $user['login'],

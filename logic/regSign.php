@@ -12,7 +12,7 @@ $code = $_POST['code'];
 $isAccept = $_POST['isAccept'];
 
 if ($isAccept) {
-    if (($pass === $pass_confirm) and ($code === 'NetFriend')) {
+    if (($pass === $pass_confirm) and ($code === 'lorem')) {
         $pass = md5($pass);
         // $_FILES['avatar']['name']
         $loadPath = 'uploads/' . time() . '_' . $_FILES['image']['name'];

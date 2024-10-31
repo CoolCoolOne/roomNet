@@ -15,7 +15,7 @@ if (!$_SESSION['user']) {
     <meta name="viewport" content="width=700">
     <title>RoomNeto.ru</title>
     <link rel="stylesheet" href="./MyRoom.css">
-  <link rel="icon" href="logo.ico"><!-- 32×32 -->
+    <link rel="icon" href="logo.ico"><!-- 32×32 -->
 </head>
 
 
@@ -38,10 +38,15 @@ if (!$_SESSION['user']) {
 
             <?php
             echo 'Добро пожаловать, ' . $_SESSION['user']['login'];
-
-            echo ' <img class="picGif" src="./imgs/computer.gif" alt="animeComputer"> ';
+            //  <img class="picGif" src="./imgs/computer.gif" alt="animeComputer"> 
+            ?>
+            <main>
+                <script src="./jsRand/p5.min.js"></script>
+                <script src="./jsRand/top.js"></script>
+            </main>
+            <?php
             echo '<div class="email">';
-            echo 'Привет! Алексей приветствует тебя здесь, <br> и благодарит за посещение! <br> Сейчас в разработке раздел БЛОГ';
+            echo 'Привет! Алексей приветствует тебя здесь, <br> и благодарит за посещение! <br> Сверху это скрипт на графической библиотеке)';
             echo '</div>';
             ?>
 
@@ -62,6 +67,18 @@ if (!$_SESSION['user']) {
         <a href="./blog/blog.php" style="display: block;">
             <div class="hosting">Блог<!-- <a href="./uzrs_table/uzrs_table.php">Блог</a> --></div>
         </a>
+        <?php
+            if ($_SESSION['user']['is_invited']=='1'){
+                ?>
+
+                <a href="./chat/chat.php" style="display: block;">
+                <div class="hosting">ЧАТ</div>
+                </a>
+
+                <?php
+            }
+        ?>
+        
     </div>
 
 
